@@ -1,0 +1,90 @@
+Polymorphism (Banyak bentuk) adalah suatu kemampuan yang dimiliki sebuah method ,
+yang mempunyai nama sama ,namun dengan perilaku yang berbeda-beda.
+Kemampuan objek agar melakukan perilaku atau tindakan yang secara konsep sama, namun dengan cara yang berbeda-beda.
+
+public class Mobil{ // super kelas mobil
+String merk; // attribut merk dengan tipe data string
+int harga; // attribut harga dengan tipe data integer
+public Mobil(){ 
+this.merk="Merk Mobil Anda ";
+this.harga=0;
+}
+public Mobil(String m, int h){ //parameter
+this.merk = m;
+this.harga = h;
+}
+//panggil method setMerk pada class Mobil, dan masukkan 1 parameter berisi "String m"
+public void setMerk(String m){
+this.merk=m;
+}
+//panggil method setHarga pada class Mobil, dan masukkan 1 parameter berisi "Integer h"
+public void setHarga(int h){
+this.harga = h;
+}
+//masukkan nilai yang dikembalikan pada class Mobil
+public String getMerk(){
+return this.merk;
+}
+//masukkan nilai yang dikembalikan pada class Mobil
+public int getHarga(){
+return this.harga;
+}
+public void melaju(){ // fungsi mobil
+System.out.println("Mobil dapat melaju");
+}
+public void rem(){ // fungsi mobil
+System.out.println("Mobil dapat berhenti jika di rem");
+}
+public void mundur(){ //fungsi mobil
+System.out.println("Mobil dapat berjalan mundur");
+}
+public void tampilkan(){ //menampilkan nama kelas
+System.out.println("Kelas Mobil");
+}
+}
+//overriding
+public class Suzuki extends Mobil{ // sub kelas dari super kelas Mobil
+String merk; //attribute merk dengan tipe data string
+public static void main (String[] args){ // main program
+Suzuki szk = new Suzuki ();//membuat objek
+Szk.Mobil();
+Mobil mbl = new Mobil();
+mbl.setMerk("Suzuki");
+mbl.setHarga(400000000);
+System.out.println("Merk Mobil : "+mbl.getMerk()); // tampilkan merk mobil dari setMerk
+System.out.println("Harga Mobil : "+mbl.getHarga()); //tampilkan harga mobil dari setHarga
+}
+public void tampilkan(){
+	System.out.println("ini tampilan dari Kelas Mobil Suzuki"); // tampilan dari kelas suzuki
+	}
+public void Mobil(){
+super.tampilkan();//panggil method tampilkan pada super kelas Mobil
+tampilkan(); //panggil method tampilkan pada sub kelas Mobil yaitu kelas Suzuki
+super.melaju(); // panggil method melaju pada super kelas Mobil
+super.rem(); // panggil method rem pada super kelas Mobil
+super.mundur(); // panggil method mundur pada super kelas Mobil
+}
+}
+//overriding
+public class Toyota extends Mobil{ //sub kelas dari super kelas Mobil
+String merk; //attribut merk dengan tipe data string
+public static void main (String[] args){ //main program
+Toyota toyota = new Toyota();//membuat objek
+Toyota.Mobil();
+MObiil mbl = new Mobil();
+mbl.setMerk("Toyota");
+mbl.setHarga(450000000);
+System.out.println("Merk Mobil : "+mbl.getMerk()); // tampilkan merk mobil dari setMerk
+System.out.println("Harga Mobil : "+mbl.getHarga()); //tampilkan harga mobil dari setHarga
+}
+public void tampilkan(){
+	System.out.println("ini tampilan dari Kelas Mobil Toyota"); // tampilan dari kelas Toyota
+	}
+public void Mobil(){
+super.tampilkan();//panggil method tampilkan pada super kelas Mobil
+tampilkan(); //panggil method tampilkan pada sub kelas Mobil yaitu kelas Toyota
+super.melaju(); // panggil method melaju pada super kelas Mobil
+super.rem(); // panggil method rem pada super kelas Mobil
+super.undur(); // panggil method mundur pada super kelas Mobil
+}
+}
